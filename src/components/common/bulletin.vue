@@ -1,8 +1,12 @@
 <template>
-  <dl class="bulletin" v-show="bulletin">
+  <dl class="bulletin" v-show="bulletin"  >
     <dt>海同快报</dt>
     <dd class="content">
-      <a :href="bulletin ? bulletin.url : ''">{{bulletin ? bulletin.title : ''}}</a>
+        <swiper :options="swiperOption" class="swiper-no-swiping" v-if="bulletin.length">
+            <swiper-slide  v-for="(item,index) in bulletin" :key="index">
+                <a :href="item.url ? item.url : ''">{{item.title ? item.title : ''}}</a>
+            </swiper-slide>
+        </swiper>
     </dd>
     <dd  v-show="sandian">
       <img src="../../assets/img/sandian.png" alt="">
@@ -11,11 +15,21 @@
 </template>
 
 <script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   props: ['bulletin'],
   data () {
     return {
-      sandian: false
+      sandian: false,
+      swiperOption:{
+          pagination:".swiper-pagination",
+          direction:"vertical",
+          autoplay:{
+              disableOnInteraction:false,
+              delay:3000,
+          },
+          loop:true,
+      }
     }
   },
   methods: {
@@ -33,7 +47,7 @@ export default {
       if (num > 18) {
         this.sandian = true
       }
-    }
+    },
   },
   watch: {
     bulletin: function (newData, oldData) {
@@ -41,7 +55,10 @@ export default {
         this.isChinese(newData.title)
       }
     }
-  }
+  },
+    components: {
+        swiperSlide, swiper
+    }
 }
 </script>
 
@@ -72,6 +89,10 @@ export default {
       color: #999999;
       overflow: hidden;
       white-space: nowrap;
+      .swiper-container{
+          height: 1.8rem;
+          margin-top: 0.02rem;
+      }
      a {
        height: 100%;
        width: 100%;

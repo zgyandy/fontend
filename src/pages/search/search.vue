@@ -2,9 +2,9 @@
 
   <div class="search">
     <div class="searchInp">
-      <!-- <dl class="dis-flex searchSort">
+      <dl class="dis-flex searchSort">
         <dd :class="condition == key ? 'active' : ''" v-for="(item, key) in searchSort" :key="key" @click.stop="condition = key">{{item}}</dd>
-      </dl> -->
+      </dl>
       <div class="inpBox dis-flex-bt">
         <input type="text" maxlength="20" v-model="key" placeholder="输入您想查找的内容">
         <div class="btn" @click="search(condition)">查找</div>
@@ -24,7 +24,7 @@
         </dl>
       </div>
     </div>
-    <Article :articles='articleArr' v-if="articleArr && condition == 0"></Article>
+    <Article :articles='articleArr' v-show="articleArr && condition == 0"></Article>
     <!-- 点击加载 -->
     <p class="loadBtn" v-show="articlePage*10 <= articleNum && articleBl && condition == 0" @click.stop="loadMore(0)">{{title}}</p>
     <!-- 视频数量 -->
@@ -40,7 +40,6 @@
         </dl>
       </div>
     </div>
-    <!-- 视频列表 -->
     <videoList :videoList="videoArr" v-if="videoArr && condition == 1"></videoList>
     <!-- 点击加载 -->
     <p class="loadBtn" v-show="videoPage*10 <= videoNum && videoBl && condition == 1" @click.stop="loadMore(1)">{{title}}</p>
@@ -81,6 +80,7 @@ export default {
     return {
       condition: 0,
       key: '',
+      searchSort: ['文章', '视频'],
       articleArr: [],
       videoArr: [],
       start: 1,

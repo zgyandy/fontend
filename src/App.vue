@@ -46,7 +46,7 @@ export default {
     }
   },
   watch: {
-    $route: function (to) {
+    $route: function (to, from) {
       this.pathName = to.name
       // 滚动到顶部
       document.body.scrollTop = 0

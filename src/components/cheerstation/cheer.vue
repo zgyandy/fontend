@@ -7,7 +7,7 @@
     <!-- <ul class="cheerList">
       <li v-for="(item, key) in cheer" v-show="key < 5" :key="key"><a :href="item.url"><img :src="item.photo" alt=""></a></li>
     </ul> -->
-    <table cellspacing="0" v-show="cheer[0]">
+    <table cellspacing="0" v-if="cheer[0]">
       <tr class="first">
         <td width="50%" rowspan="2">
           <a :href="cheer[0] ? cheer[0].url : ''"><img :src="cheer[0] ? cheer[0].photo : '' " alt=""></a>
@@ -27,7 +27,11 @@
 
 <script>
 export default {
-  props: ['cheer']
+  props: {
+    'cheer': {
+      default: () => new Array
+    }
+  }
 }
 </script>
 

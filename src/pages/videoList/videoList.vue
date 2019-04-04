@@ -41,7 +41,7 @@ export default {
   data () {
     return {
       dropArr:['全部分类', '全部类别', '综合排序'],
-      bulletin: {title: '人工智能物联网课程升级啦！特惠抢购中！', url: 'http://www.haitongjiaoyu.com/sem/wulianwang/mwulianwang1/'},
+      bulletin: {},
       queryVideoList: [],
       start: 1,
       subject: 0,
@@ -88,6 +88,7 @@ export default {
       this.$get(this.$store.state.domain + "/api/video/total/", {limit: 10, start: start ? start : this.start, subject: subject, difficulty: difficulty, sort: sot}).then(res => {
         this.allLoaded = true
         if (res.data.code == 200) {
+          this.bulletin = res.data.data.advert
           this.difficultyArr = res.data.data.difficulty
           this.subjectArr = res.data.data.subject
           if (start) {

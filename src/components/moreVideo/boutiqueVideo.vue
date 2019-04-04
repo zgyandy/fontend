@@ -3,11 +3,11 @@
         <div class="boutiquebvieo">
             <p class="boutinqueVbioe">精品视频</p>
             <p class="boutinqueVlose">名师真人授课，实景精彩呈现</p>
-            <a href="javascript:;" class="boutinquevlosm" @click.stop="addMore(numType)">更多>></a>
+            <a :href="$store.state.domain + '/video/total/'" class="boutinquevlosm">更多>></a>
         </div>
         <div class="boutiqueVbstore">
             <ul class="boutiqueVbstoreUl">
-                <li class="boutblist" v-if="dataAll.type=1" v-for="(item,index) in dataai"  :key="index" @click.stop="toPlay(item.id)">
+                <li class="boutblist" v-show="dataAll.type=1" v-for="(item,index) in dataai"  :key="index" @click.stop="toPlay(item.id)">
                     <img class="boutblistimg" v-lazy="$store.state.imgBaseUrl+item.picture" alt="">
                     <div class="boutbtime">
                         <p class="boubtimeLe">{{ item.rangeName }}</p>

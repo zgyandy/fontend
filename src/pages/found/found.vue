@@ -11,10 +11,6 @@
     <bulletin :bulletin='bulletin'></bulletin>
     <!-- 灰色间隔 -->
     <Gray></Gray>
-    <!-- 活动 -->
-    <Activity></Activity>
-    <!-- 灰色间隔 -->
-    <Gray></Gray>
     <!-- 加油站 -->
     <CheerStation :cheer="cheer"></CheerStation>
     <!-- 灰色间隔 -->
@@ -25,9 +21,9 @@
     <Gray></Gray>
     <!-- 文章列表 -->
     <mt-loadmore :bottomMethod="loadBottom" :bottomAllLoaded="allLoaded" ref="loadmore" bottomPullText="上拉加载" :maxDistance="maxDistance">
-      <listTitle :listTitle="listTitle" ></listTitle>
-      <Article ref="Article" :adPass="adPass" :articles="articles"></Article>
-      <loadMore :title="loadTitle"></loadMore>
+    <listTitle :listTitle="listTitle" ></listTitle>
+    <Article ref="Article" :adPass="adPass" :articles="articles"></Article>
+    <loadMore :title="loadTitle"></loadMore>
     </mt-loadmore>
 
   </div>
@@ -43,7 +39,7 @@ import Leature from '../../components/lecture/lecture'
 import Article from '../../components/article/article'
 import loadMore from '../../components/common/loadMore'
 import listTitle from '../../components/common/listTitle'
-import Activity from '../../components/activity/Activity'
+
 export default {
   metaInfo: {
     title: 'IT职业教育培训_IT培训中心_IT在线教育-职坐标', // set a title
@@ -96,20 +92,29 @@ export default {
   beforeCreate () {
     this.$post(this.$store.state.domain + '/api/video/indexAdvertiement').then((res) => {
       if (res.data.code == 200) {
-        this.banner = res.data.data.carousel
-        this.cheer = res.data.data.focus
-        this.adPass = res.data.data.pass
+          this.banner = res.data.data.carousel
+          this.cheer = res.data.data.focus ? res.data.data.focus : []
+          this.adPass = res.data.data.pass
       }
     }).catch((err) => {
       throw err
-    })
+    });
+      // this.$post('http://m.testiotek.com' + '/api/video/indexAdvertiement').then((res) => {
+      //     if (res.data.code == 200) {
+      //         this.banner = res.data.data.carousel
+      //         this.cheer = res.data.data.focus
+      //         this.adPass = res.data.data.pass
+      //     }
+      // }).catch((err) => {
+      //     throw err
+      // })
     this.$post(this.$store.state.domain + '/api/video/indexVideo').then((res) => {
       if (res.data.code == 200) {
         this.lectureArr = res.data.data
       }
     }).catch((err) => {
       throw err
-    })
+    });
     this.$get(this.$store.state.domain + "/api/video/indexExpress").then(res => {
       this.bulletin = res.data.data
     }).catch(err => {
@@ -149,8 +154,8 @@ export default {
           }
         }
       }).catch((err) => {
-        this.allLoaded = true
         throw err
+        this.allLoaded = true
       })
     },
     windowScroll () {
@@ -172,7 +177,7 @@ export default {
     }
   },
   components: {
-    Banner, linkList, bulletin, CheerStation, Leature, Article, loadMore, listTitle, Activity
+    Banner, linkList, bulletin, CheerStation, Leature, Article, loadMore, listTitle
   }
 }
 </script>

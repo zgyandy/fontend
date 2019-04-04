@@ -1,50 +1,50 @@
 <template>
   <ul class="linkList dis-flex-wrap">
     <li>
-      <a href="http://www.zzbpx.com.cn/sem/qianrushi/mqianrushi1/">
-        <img src="../../assets/img/link01.png" alt>
+      <a href="http://www.zhizuobiao.com/zyll/qianrushi/mqianrushi1/">
+        <img src="../../assets/img/link01.png" alt = "物联网">
         <div>物联网</div>
       </a>
     </li>
     <li>
-      <a href="http://www.haitongjiaoyu.com/sem/wulianwang/mwulianwang1/">
-        <img src="../../assets/img/link02.png" alt>
+      <a href="http://www.zhizuobiao.com/zyll/python/mpython23/">
+        <img src="../../assets/img/link02.png" alt = "人工智能">
         <div>人工智能</div>
       </a>
     </li>
     <li>
-      <a href="http://www.focuskid.cn/sem/dashuju/mdashuju1">
-        <img src="../../assets/img/link03.png" alt>
+      <a href="http://www.zhizuobiao.com/zyll/dashuju/mdashuju2/">
+        <img src="../../assets/img/link03.png" alt = "大数据">
         <div>大数据</div>
       </a>
     </li>
     <li>
-      <a href="http://www.focuskid.cn/sem/shujufenxi/mshujufenxi1/">
-        <img src="../../assets/img/link04.png" alt>
+      <a href="http://www.zhizuobiao.com/zyll/shujufenxi/mshujufenxi1/">
+        <img src="../../assets/img/link04.png" alt = "数据分析">
         <div>数据分析</div>
       </a>
     </li>
     <li>
-      <a href="http://www.zzbpx.com.cn/sem/java/mjava1/">
-        <img src="../../assets/img/link05.png" alt>
+      <a href="http://www.zhizuobiao.com/zyll/java/mjava1/">
+        <img src="../../assets/img/link05.png" alt = "Java">
         <div>Java</div>
       </a>
     </li>
     <li>
-      <a href="http://www.zzbpx.com.cn/sem/h5/mh51/">
-        <img src="../../assets/img/link06.png" alt>
+      <a href="http://www.zhizuobiao.com/zyll/h5/mh51/">
+        <img src="../../assets/img/link06.png" alt = "WEB前端">
         <div>WEB前端</div>
       </a>
     </li>
     <li>
       <a :href="$store.state.domain + '/video/'">
-        <img src="../../assets/img/link07.png" alt>
+        <img src="../../assets/img/link07.png" alt = "讲堂">
         <div>讲堂</div>
       </a>
     </li>
     <li>
       <a href="http://m.zhizuobiao.com/knowledge/">
-        <img src="../../assets/img/link08.png" alt>
+        <img src="../../assets/img/link08.png" alt = "知识库">
         <div>知识库</div>
       </a>
     </li>

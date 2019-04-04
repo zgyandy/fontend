@@ -562,11 +562,9 @@ export default {
       padding: 0 .2rem;
       li {
         height: 1.72rem;
-        width: 100%;
         padding: .3rem 0;
         border-bottom: dashed 1px #dadada;
         a {
-          width: 100%;
           color: #333;
         }
         .msg {

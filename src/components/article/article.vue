@@ -1,4 +1,5 @@
 <template>
+
   <div class="article">
     <div class="bannerBox" v-if="adPass ? adPass.length > 0 : adPass">
       <swiper :options="swiperOption">
@@ -84,8 +85,8 @@ export default {
     .articleList {
       padding: 0 .2rem;
       li {
-        height: 1.57rem;
-        padding: .2rem 0;
+        height: 1.72rem;
+        padding: .3rem 0;
         border-bottom: 1px dashed #a0a0a0;
         font-size: .28rem;
         overflow: hidden;
@@ -93,12 +94,11 @@ export default {
           width: 100%;
         }
         .imgBox {
-          height: 1.57rem;
-          width: 2.1rem;
+          width: 2.3rem;
+          height: 1.72rem;
           float: left;
           img {
             width: 100%;
-            height: 100%;
           }
         }    
         .msg {
@@ -110,6 +110,7 @@ export default {
             overflow: hidden;
             line-height: .45rem;
             font-size: .3rem;
+            padding-top: .1rem;
             color: #000;
           }
           img {
@@ -118,9 +119,6 @@ export default {
             margin-right: .1rem;
           }
         }
-      }
-      li:first-child {
-        padding-top: 0.3rem;
       }
     }
   }

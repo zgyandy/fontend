@@ -116,7 +116,7 @@ export default {
         color: #e10030;
       }
       .iconfont {
-        font-size: .4em;
+        font-size: .3rem;
       }
     }
     .listBox {

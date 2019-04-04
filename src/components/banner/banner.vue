@@ -1,6 +1,6 @@
 <template>
     <mt-swipe :auto="time">
-      <mt-swipe-item v-for = "(item, key) in banner" v-show = "item['position'] *1 == 10" :key="key">
+      <mt-swipe-item v-for="(item, key) in banner" v-show="item['position'] *1 == 3" :key="key">
         <a :href="item.url ? item.url : 'javascript:;'">
           <img :src="item.photo" :alt="item.title">
         </a>
@@ -12,7 +12,7 @@
 export default {
   props: {
     time: {
-      default: 3000,
+      default: 4000,
       type: Number
     },
     banner: {
@@ -23,12 +23,7 @@ export default {
 </script>
 
 <style>
-  .mint-swipe .mint-swipe-indicators .mint-swipe-indicator {
+  .mint-swipe-indicators {
     bottom: .23rem;
-    opacity: 1;
-    background: #fff;
-  }
-  .mint-swipe .mint-swipe-indicators .is-active  {
-    background: #e10030;
   }
 </style>

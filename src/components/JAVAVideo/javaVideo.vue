@@ -3,7 +3,7 @@
         <div class="boutiquebvieo">
             <p class="boutinqueVbioe">Java全栈</p>
             <p class="boutinqueVlose">主流编程语言，薪资高前景好</p>
-            <a href="javascript:;" class="boutinquevlosm" @click.stop="addMore(numType)">更多>></a>
+            <a :href="$store.state.domain + '/video/total-b5/'" class="boutinquevlosm">更多>></a>
         </div>
         <div class="boutiqueVbstore">
             <ul class="boutiqueVbstoreUl">

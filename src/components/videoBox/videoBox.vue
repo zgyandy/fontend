@@ -153,7 +153,7 @@ export default {
     height: 4.6rem;
     position: fixed;
     left: 50%;
-    top: 1.04rem;
+    top: .99rem;
     margin-left: -3.75rem;
     z-index: 99;
     .outBox {

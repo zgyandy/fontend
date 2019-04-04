@@ -35,10 +35,7 @@
               <img class="menuicon" src="../../assets/img/menu.png" alt="">
             </span>
           </span>
-          <!-- pathName == 'search' -->
-          <a :href="$store.state.domain + '/my/'" v-show="pathName == 'search'">
-            <img class="myicon" src="../../assets/img/my.png" alt="">
-          </a>
+
           <a :href="$store.state.domain + '/find/'" v-show="pathName === 'found'">
             <img class="searchIcon" src="../../assets/img/search.png" alt="">
           </a>
@@ -107,7 +104,7 @@ export default {
       min-height: .45rem;
     }
     .fixedBox {
-      height: 1.04rem;
+      height: .99rem;
       width: 7.5rem;
       position: fixed;
       background: #fff;
@@ -121,13 +118,14 @@ export default {
       overflow: hidden;
       z-index: 104;
       .dis-flex-bt {
-        height: 1.04rem;
+        height: .9rem;
         width: 7.1rem;
         padding: 0 0.2rem;
         margin: 0 auto;
-        -moz-box-shadow:0px 0.06rem 0px #e10030 inset;
-        -webkit-box-shadow:0px 0.06rem 0px #e10030 inset;
-        box-shadow:0px 0.06rem 0px #e10030 inset;
+        margin-top: .09rem;
+        // -moz-box-shadow:0px -0.1rem 0px #e10030;
+        // -webkit-box-shadow:0px -0.1rem 0px #e10030;
+        // box-shadow:0px -0.1rem 0px #e10030;
       }
       .navLeft {
         .goBack {
@@ -181,13 +179,13 @@ export default {
       }
     }
     .line {
-      height: 1.04rem;
+      height: .99rem;
     }
     .menuBox {
       position: fixed;
       height: 100%;
       width: 7.5rem;
-      top: 1.04rem;
+      top: .99rem;
       left: 50%;
       transform: translate(-50%, 0);
       -o-transform: translate(-50%, 0);

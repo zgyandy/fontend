@@ -2,9 +2,9 @@
     <div class="forum">
         <div class="formBanner">
             <mt-swipe :auto="4000" :show-indicators="false" :continuous="true">
-                <mt-swipe-item v-for="(items,index) in dataImgs" v-if="items.picture" :key="index">
+                <mt-swipe-item v-for="(items,index) in dataImgs" :key="index">
                     <a :href="items.url ? items.url : 'javascript:;'">
-                        <img :src="$store.state.imgBaseUrl+items.picture" alt="">
+                        <img :src="items.photo" alt="">
                     </a>
                 </mt-swipe-item>
             </mt-swipe>
@@ -155,10 +155,8 @@ export default {
             dataImg:[],
             attentionType:'',
             attenType:'',
-            bulletin:{
-                title: "人工智能物联网课程升级啦！特惠抢购中！",
-                url:'http://www.haitongjiaoyu.com/sem/wulianwang/mwulianwang1/',
-            }
+            bulletin:{},
+            banner:[],
         }
     },
     components:{
@@ -326,7 +324,8 @@ export default {
     },
     mounted(){
         this.$post(this.$store.state.domain + '/api/video/lectureHallByAdvertising').then(res =>{
-            this.dataImgs = res.data.data;
+            this.dataImgs = res.data.data.focus;
+            this.bulletin = res.data.data.notice;
         }).catch((err)=>{
             throw err;
         });
